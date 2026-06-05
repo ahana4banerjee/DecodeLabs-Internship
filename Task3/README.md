@@ -10,8 +10,8 @@ This task implements a real-time, interactive dashboard using **Streamlit** to m
 * **State Management:** Implemented a custom auto-refresh loop in the sidebar to simulate live socket connections without the overhead of a dedicated backend server.
 
 ## 📸 Dashboard Screenshots
-![alt text](<Screenshot 2026-06-05 233618.png>)
-![alt text](image.png)
+![alt text](<assets/Screenshot 2026-06-05 233618.png>)
+![alt text](<assets/image.png>)
 
 ## 🚀 How to Run Locally
 
