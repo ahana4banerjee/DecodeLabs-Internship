@@ -9,7 +9,7 @@ import os
 st.set_page_config(page_title="Smart Environment Dashboard", page_icon="🌍", layout="wide")
 
 # Paths
-SENSOR_DATA_PATH = "../../Task-2-Sensor-Simulation/python_logger/data/sensor_log.csv"
+SENSOR_DATA_PATH = "../../Task2/python_logger/data/sensor_log.csv"
 ALERTS_DATA_PATH = "../automation_engine/data/alerts_log.csv"
 
 @st.cache_data(ttl=2)
