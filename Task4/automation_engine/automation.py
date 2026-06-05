@@ -8,7 +8,7 @@ from alert_rules import evaluate_sensor_data
 
 # Configurations
 # Adjust SENSOR_DATA_PATH to point to your Task 2 output
-SENSOR_DATA_PATH = '../../Task-2-Sensor-Simulation/python_logger/data/sensor_log.csv'
+SENSOR_DATA_PATH = '../../Task2/python_logger/data/sensor_log.csv'
 ALERTS_DATA_PATH = 'data/alerts_log.csv'
 POLL_INTERVAL = 5  # Seconds to wait between checks
 
