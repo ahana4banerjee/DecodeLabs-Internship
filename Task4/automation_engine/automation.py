@@ -16,7 +16,7 @@ def setup_alerts_csv():
     """Ensure the alerts CSV exists with the proper headers."""
     os.makedirs(os.path.dirname(ALERTS_DATA_PATH), exist_ok=True)
     if not os.path.isfile(ALERTS_DATA_PATH):
-        with open(ALERTS_DATA_PATH, mode='w', newline='') as file:
+        with open(ALERTS_DATA_PATH, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(['Timestamp', 'AlertType', 'Severity', 'Message', 'SensorValues'])
         print(f"Initialized alerts log at {ALERTS_DATA_PATH}")
@@ -60,7 +60,7 @@ def process_new_data():
 
         # Write new alerts to CSV
         if new_alerts:
-            with open(ALERTS_DATA_PATH, mode='a', newline='') as file:
+            with open(ALERTS_DATA_PATH, mode='a', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=['Timestamp', 'AlertType', 'Severity', 'Message', 'SensorValues'])
                 for alert in new_alerts:
                     writer.writerow(alert)

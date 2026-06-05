@@ -16,7 +16,7 @@ ALERTS_DATA_PATH = "../automation_engine/data/alerts_log.csv"
 def load_sensor_data():
     if os.path.exists(SENSOR_DATA_PATH):
         try:
-            df = pd.read_csv(SENSOR_DATA_PATH)
+            df = pd.read_csv(SENSOR_DATA_PATH, encoding='utf-8')
             # Defensive check: Ensure dataframe isn't empty and has the column
             if df.empty or 'Timestamp' not in df.columns:
                 return pd.DataFrame()
@@ -32,7 +32,7 @@ def load_sensor_data():
 def load_alerts_data():
     if os.path.exists(ALERTS_DATA_PATH):
         try:
-            df = pd.read_csv(ALERTS_DATA_PATH)
+            df = pd.read_csv(ALERTS_DATA_PATH, encoding='utf-8')
             # Defensive check: Ensure dataframe isn't empty and has the column
             if df.empty or 'Timestamp' not in df.columns:
                 return pd.DataFrame()
