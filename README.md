@@ -10,6 +10,8 @@ This repository contains the complete progression of an Electronics and Communic
 
 The project simulates an edge-device capturing telemetry (Temperature, Ambient Light, and Motion), builds a robust Python data ingestion pipeline, implements an autonomous background rule engine for alert generation, and visualizes the system state using a modern web dashboard. 
 
+*For detailed technical architecture and formal implementation notes, please see the [Project Report](./PROJECT_REPORT.md).*
+
 ---
 
 ## 🏗️ System Architecture Flow
