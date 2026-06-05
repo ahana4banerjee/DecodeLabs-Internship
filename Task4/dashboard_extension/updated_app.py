@@ -15,17 +15,33 @@ ALERTS_DATA_PATH = "../automation_engine/data/alerts_log.csv"
 @st.cache_data(ttl=2)
 def load_sensor_data():
     if os.path.exists(SENSOR_DATA_PATH):
-        df = pd.read_csv(SENSOR_DATA_PATH)
-        df['Timestamp'] = pd.to_datetime(df['Timestamp'])
-        return df
+        try:
+            df = pd.read_csv(SENSOR_DATA_PATH)
+            # Defensive check: Ensure dataframe isn't empty and has the column
+            if df.empty or 'Timestamp' not in df.columns:
+                return pd.DataFrame()
+            
+            df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+            return df
+        except pd.errors.EmptyDataError:
+            # Catches completely blank 0-byte files
+            return pd.DataFrame()
     return pd.DataFrame()
 
 @st.cache_data(ttl=2)
 def load_alerts_data():
     if os.path.exists(ALERTS_DATA_PATH):
-        df = pd.read_csv(ALERTS_DATA_PATH)
-        df['Timestamp'] = pd.to_datetime(df['Timestamp'])
-        return df
+        try:
+            df = pd.read_csv(ALERTS_DATA_PATH)
+            # Defensive check: Ensure dataframe isn't empty and has the column
+            if df.empty or 'Timestamp' not in df.columns:
+                return pd.DataFrame()
+            
+            df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+            return df
+        except pd.errors.EmptyDataError:
+            # Catches completely blank 0-byte files
+            return pd.DataFrame()
     return pd.DataFrame()
 
 def render_alert_banners(df_alerts):
