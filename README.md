@@ -113,4 +113,3 @@ This comprehensive project was architected and developed from the ground up as t
 * **Name:** Ahana Banerjee
 * **College / University:** JNTUH
 * **Degree:** B. Tech + M. Tech IDP in ECE, 4th Year
-```
